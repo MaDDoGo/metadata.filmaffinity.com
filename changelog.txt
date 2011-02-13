@@ -1,16 +1,16 @@
-[B]1.3.1[/B]
+ï»¿[B]1.3.1[/B]
 
-- Arreglado problema con los géneros.
-- Arreglado problema con el numero de votaciones (no cogía los ceros)
+- Arreglado problema con los gÃ©neros.
+- Arreglado problema con el numero de votaciones (no cogÃ­a los ceros)
 
 [B]1.3[/B]
 
 - Arreglados problemas con expresiones regulares
-- Añadida una opción para escoger de donde descargar el reparto (eliminadas opciones auxiliares)
-- Añadida la opción de escoger la descarga de trailers (desde filmaffinity o desde HD-Trailers.net
-- Editado el menú de configuracion del scraper
-- Código comentado para entender mejor las funciones
-- Varios problemas pequeños arreglados
+- AÃ±adida una opciÃ³n para escoger de donde descargar el reparto (eliminadas opciones auxiliares)
+- AÃ±adida la opciÃ³n de escoger la descarga de trailers (desde filmaffinity o desde HD-Trailers.net
+- Editado el menÃº de configuracion del scraper
+- CÃ³digo comentado para entender mejor las funciones
+- Varios problemas pequeÃ±os arreglados
 
 [B]1.2.4[/B]
 
@@ -18,7 +18,7 @@
 
 [B]1.2.3[/B]
 
-- Arreglados los tags rotos a causa de la remodelación de la pagina web de imdb.
+- Arreglados los tags rotos a causa de la remodelaciÃ³n de la pagina web de imdb.
 
 [B]1.2.1[/B]
 - Added Hungarian translation.
@@ -26,14 +26,14 @@
 [B]1.2.0[/B]
 
 - Adaptado el scraper con las nuevas funciones <chain>.
-- Añadido descarga de posters desde TheMovieDB.
-- Eliminada opción sin uso.
+- AÃ±adido descarga de posters desde TheMovieDB.
+- Eliminada opciÃ³n sin uso.
 - Arreglado problema con los posters de filmaffinity.
 
 [B]1.1.0[/B]
 
 - Arreglado un problema que no dejaba configurar correctamente el scraper.
-- Añadidas traducciones y mejorados ajustes.
+- AÃ±adidas traducciones y mejorados ajustes.
 
 [B]1.0.2[/B]
 
