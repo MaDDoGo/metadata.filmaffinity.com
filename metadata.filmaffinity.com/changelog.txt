@@ -1,3 +1,11 @@
+[B]1.4.1[/B]
+
+- Actualizada información al inglés y borrado archivos para adaptarse a las reglas de addons (Thanks Olympia)
+
+[B]1.4[/B]
+
+- Arreglados los fallos que daba filmaffinity en la última actualización (aporte de agjacome, otra vez muchas gracias!)
+
 [B]1.3.4[/B]
 
 - Arregladas otra vez las votaciones, espero que imdb no cambie más el diseño...
