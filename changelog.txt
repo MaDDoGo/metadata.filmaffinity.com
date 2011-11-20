@@ -1,3 +1,7 @@
+[B]1.4.2[/B]
+
+- Arreglada duración de la película y el país (gracias XBMCSPAIN)
+
 [B]1.4.1[/B]
 
 - Actualizada información al inglés y borrado archivos para adaptarse a las reglas de addons (Thanks Olympia)
