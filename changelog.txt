@@ -1,3 +1,7 @@
+[B]1.4.3[/B]
+
+- Mejorada la búsqueda para usar el año y corregidas limitaciones de búsqueda en google (gracias a pancheto)
+
 [B]1.4.2[/B]
 
 - Arreglada duración de la película y el país (gracias XBMCSPAIN)

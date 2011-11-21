@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<scraper framework="1.1" date="2011-11-19">
+ï»¿<?xml version="1.0" encoding="UTF-8"?>
+<scraper framework="1.1" date="2011-11-21">
 	<!-- -->
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;http://www.filmaffinity.com/es/film\1.html&lt;/url&gt;" dest="3">
 			<expression noclean="1">filmaffinity.com/es/film([0-9]*)</expression>
 		</RegExp>
 	</NfoUrl>
-	<!-- Creación de la página web de búsquedas de filmaffinity -->
+	<!-- CreaciÃ³n de la pÃ¡gina web de bÃºsquedas de filmaffinity -->
 	<CreateSearchUrl SearchStringEncoding="iso-8859-1" dest="3">
-		<RegExp input="$$1" output="&lt;url&gt;http://www.filmaffinity.com/es/search.php?stext=\1&amp;amp;stype=none&lt;/url&gt;" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.filmaffinity.com/es/advsearch.php?stype[]=title&fromyear=$$2&toyear=$$2&stext=\1&lt;/url&gt;" dest="3">
 			<expression noclean="1" />
 		</RegExp>
 	</CreateSearchUrl>
-	<!-- Parseo de los resultados de la búsqueda -->
+	<!-- Parseo de los resultados de la bÃºsqueda -->
 	<GetSearchResults dest="8">
 		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="8">
 			<RegExp input="$$1" output="\1" dest="7">
@@ -67,7 +67,7 @@
                 <expression>&lt;th&gt;PRODUCTORA&lt;/th&gt;\s*&lt;td&gt;([^&lt;]*)&lt;/td&gt;</expression> 
 			</RegExp>
 			
-			<RegExp conditional="StudioFlagsON" input="$$9" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="5+"> <!-- Si no sólamente descarga el primero y es más compatible con los skins -->
+			<RegExp conditional="StudioFlagsON" input="$$9" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="5+"> <!-- Si no sÃ³lamente descarga el primero y es mÃ¡s compatible con los skins -->
 				<RegExp input="$$1" output="\1" dest="9">
 					<expression noclean="1">&lt;th&gt;PRODUCTORA&lt;/th&gt;\s*&lt;td&gt;([^&lt;]*)&lt;/td&gt;</expression> 
 				</RegExp>
@@ -85,7 +85,7 @@
 				<expression noclean="1">&lt;th&gt;GUI&amp;Oacute\;N&lt;/th&gt;\s*&lt;td&gt;(.*)&lt;/td&gt;\s*&lt;/tr&gt;\s*&lt;tr&gt;\s*&lt;th&gt;M&amp;Uacute\;SICA&lt;/th&gt;</expression>
 			</RegExp>
 			
-			<!-- Estas dos expresiones cogen la puntuación y el numero de votos de filmaffinity -->
+			<!-- Estas dos expresiones cogen la puntuaciÃ³n y el numero de votos de filmaffinity -->
 
 			<RegExp conditional="!iMDBRatings" input="$$1" output="&lt;rating&gt;\1.\2&lt;/rating&gt;" dest="5+">
 				<expression>bold;&quot;&gt;([1-9]),([0-9])</expression>
@@ -99,7 +99,7 @@
 				<expression>&lt;/a&gt;\s*&lt;/div&gt;\s*([0-9]*) min\.\s*&lt;/td&gt;</expression>
 			</RegExp>
 			
-			<!-- Descarga el listado de actores de filmaffinity (Pocos resultados y sin el rol que realizan en la película) -->
+			<!-- Descarga el listado de actores de filmaffinity (Pocos resultados y sin el rol que realizan en la pelÃ­cula) -->
 
 			<RegExp input="$INFO[Cast]" output="$$6" dest="5+">
 				<RegExp input="$$1" output="&lt;actor&gt;&lt;name&gt;\1&lt;/name&gt;&lt;/actor&gt;" dest="6">
@@ -108,7 +108,7 @@
 				<expression>Filmaffinity.\(solo.Actores\)</expression>
 			</RegExp>
 			
-			<!-- Si la opción solo poster de filmaffinity esta activada descarga el primer poster que aparece en la web -->
+			<!-- Si la opciÃ³n solo poster de filmaffinity esta activada descarga el primer poster que aparece en la web -->
 
 			<RegExp input="$$1" output="&lt;thumb&gt;http://pics.filmaffinity.com/\1&lt;/thumb&gt;" dest="5+">
 				<expression noclean="1,2">href="http://pics.filmaffinity.com/([^=]*large.jpg)"</expression>
@@ -121,7 +121,7 @@
 
 			<!-- URL to Google and IMDB (Original+title+year) -->
 
-			<RegExp input="$$9" output="&lt;url function=&quot;GoogleToIMDB&quot;&gt;http://www.google.com/search?q=site:imdb.com\1&lt;/url&gt;" dest="5+">
+			<RegExp input="$$9" output="&lt;url function=&quot;GoogleToIMDB&quot;&gt;http://www.google.com/search?q=imdb\1&btnI=745&pws=0&lt;/url&gt;" dest="5+">
 				<RegExp input="$$8" output="+\1" dest="9">
 					<RegExp input="$$1" output="\1" dest="8">
 						<expression>&lt;th&gt;T&amp;Iacute\;TULO ORIGINAL&lt;/th&gt;\s*&lt;td&gt;&lt;strong&gt;([^&lt;]*)&lt;/strong&gt;&lt;/td&gt;</expression>
@@ -137,7 +137,7 @@
 				<expression />
 			</RegExp>
 			
-			<!-- Nuevo sistema de descarga de trailers (dependiendo de la configuración del scraper) -->
+			<!-- Nuevo sistema de descarga de trailers (dependiendo de la configuraciÃ³n del scraper) -->
 			
 			<RegExp input="$INFO[TrailerQ]" output="&lt;chain function=&quot;GetHDTrailersnet480p&quot;&gt;$$6&lt;/chain&gt;" dest="5+">
 				<RegExp input="$$5" output="\1" dest="6">
