@@ -121,18 +121,18 @@
 
 			<!-- URL to Google and IMDB (Original+title+year) -->
 
-			<RegExp input="$$9" output="&lt;url function=&quot;GoogleToIMDB&quot;&gt;http://www.google.com/search?q=imdb\1&btnI=745&pws=0&lt;/url&gt;" dest="5+">
-				<RegExp input="$$8" output="+\1" dest="9">
-					<RegExp input="$$1" output="\1" dest="8">
-						<expression>&lt;th&gt;T&amp;Iacute\;TULO ORIGINAL&lt;/th&gt;\s*&lt;td&gt;&lt;strong&gt;([^&lt;]*)(\(AKA*[^&lt;])*&lt;/strong&gt;&lt;/td&gt;</expression>
-					</RegExp>
-					<expression repeat="yes">([^ ,]+)</expression>
-				</RegExp>
-				<RegExp input="$$6" output="+\1" dest="9+">
+			<RegExp input="$$9" output="&lt;url function=&quot;GoogleToIMDB&quot;&gt;http://www.google.com/search?q=\1+akas.imdb.com&lt;/url&gt;" dest="5+">
+				<RegExp input="$$6" output="\1" dest="9">
 					<RegExp input="$$1" output="\1" dest="6">
 						<expression>&lt;th&gt;A&Ntilde;O&lt;/th&gt;\s*&lt;td&gt;(.*)&lt;/td&gt;\s*&lt;/tr&gt;\s*&lt;tr&gt;\s*&lt;th&gt;DURACI&Oacute;N&lt;/th&gt;</expression>
 					</RegExp>
 					<expression>\s*([0-9]{4})\s*</expression>
+				</RegExp>
+				<RegExp input="$$8" output="+\1" dest="9+">
+					<RegExp input="$$1" output="\1" dest="8">
+						<expression>&lt;th&gt;T&amp;Iacute\;TULO ORIGINAL&lt;/th&gt;\s*&lt;td&gt;&lt;strong&gt;([^&lt;]*)&lt;/strong&gt;&lt;/td&gt;</expression>
+					</RegExp>
+					<expression repeat="yes">([^ ,]+)</expression>
 				</RegExp>
 				<expression />
 			</RegExp>
