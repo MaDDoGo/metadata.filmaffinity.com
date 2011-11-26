@@ -92,7 +92,7 @@
 			</RegExp>
 			
 			<RegExp conditional="!iMDBRatings" input="$$1" output="&lt;votes&gt;\1\2&lt;/votes&gt;" dest="5+">
-				<expression>style=&quot;margin: 4px 0\;&quot;&gt;\(([0-9\.]*) votos\)</expression>
+				<expression>style=&quot;margin: 4px 0\;&quot;&gt;([0-9\.]*) votos</expression>
 			</RegExp>
 			
 			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
@@ -121,18 +121,18 @@
 
 			<!-- URL to Google and IMDB (Original+title+year) -->
 
-			<RegExp input="$$9" output="&lt;url function=&quot;GoogleToIMDB&quot;&gt;http://www.google.com/search?q=\1+akas.imdb.com&lt;/url&gt;" dest="5+">
-				<RegExp input="$$6" output="\1" dest="9">
-					<RegExp input="$$1" output="\1" dest="6">
-						<expression>&lt;th&gt;A&Ntilde;O&lt;/th&gt;\s*&lt;td&gt;(.*)&lt;/td&gt;\s*&lt;/tr&gt;\s*&lt;tr&gt;\s*&lt;th&gt;DURACI&Oacute;N&lt;/th&gt;</expression>
-					</RegExp>
-					<expression>\s*([0-9]{4})\s*</expression>
-				</RegExp>
-				<RegExp input="$$8" output="+\1" dest="9+">
+			<RegExp input="$$9" output="&lt;url function=&quot;GoogleToIMDB&quot;&gt;http://www.google.com/search?q=imdb.com\1&lt;/url&gt;" dest="5+">
+				<RegExp input="$$8" output="+\1" dest="9">
 					<RegExp input="$$1" output="\1" dest="8">
 						<expression>&lt;th&gt;T&amp;Iacute\;TULO ORIGINAL&lt;/th&gt;\s*&lt;td&gt;&lt;strong&gt;([^&lt;]*)&lt;/strong&gt;&lt;/td&gt;</expression>
 					</RegExp>
 					<expression repeat="yes">([^ ,]+)</expression>
+				</RegExp>
+				<RegExp input="$$6" output="+\1" dest="9+">
+					<RegExp input="$$1" output="\1" dest="6">
+						<expression>&lt;th&gt;A&Ntilde;O&lt;/th&gt;\s*&lt;td&gt;(.*)&lt;/td&gt;\s*&lt;/tr&gt;\s*&lt;tr&gt;\s*&lt;th&gt;DURACI&Oacute;N&lt;/th&gt;</expression>
+					</RegExp>
+					<expression>\s*([0-9]{4})\s*</expression>
 				</RegExp>
 				<expression />
 			</RegExp>
