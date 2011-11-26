@@ -2,6 +2,7 @@
 
 - Mejorada la búsqueda para usar el año y corregidas limitaciones de búsqueda en google (gracias a Lechu)
 - Mejorada la búsqueda de miniaturas y posters en filmaffinity (gracias a Lechu)
+- Corregida, una vez más, la lectura de los votos de filmaffinity (gracias a Lechu)
 
 [B]1.4.2[/B]
 
