@@ -42,7 +42,7 @@
 			</RegExp>
 			
 			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="5+">
-				<expression>SINOPSIS&lt;/th&gt;\s*&lt;td&gt;(.*?)(\(FILM|&lt;/td&gt;)</expression>
+				<expression>SINOPSIS&lt;/th&gt;\s*&lt;td&gt;(.*?)(\(FILMAFFINITY\)|&lt;/td&gt;)</expression>
 			</RegExp>
 			
 			<RegExp input="$$1" output="&lt;country&gt;\1&lt;/country&gt;" dest="5+">
