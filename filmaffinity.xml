@@ -126,7 +126,7 @@
 					<RegExp input="$$1" output="\1" dest="8">
 						<expression>&lt;th&gt;T&amp;Iacute\;TULO ORIGINAL&lt;/th&gt;\s*&lt;td&gt;&lt;strong&gt;(.*?)(\(AKA|&lt;/strong&gt;&lt;/td&gt;)</expression>
 					</RegExp>
-					<expression repeat="yes">([^ ,]+)</expression>
+					<expression repeat="yes">([^ ,&amp;]+)</expression>
 				</RegExp>
 				<RegExp input="$$6" output="+\1" dest="9+">
 					<RegExp input="$$1" output="\1" dest="6">
