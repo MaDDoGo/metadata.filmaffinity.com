@@ -41,11 +41,8 @@
 				<expression>&lt;th&gt;T&amp;Iacute\;TULO ORIGINAL&lt;/th&gt;\s*&lt;td&gt;&lt;strong&gt;([^&lt;]*)&lt;/strong&gt;&lt;/td&gt;</expression>
 			</RegExp>
 			
-			<RegExp input="$$8" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="5+">
-				<RegExp input="$$1" output="\1" dest="8">
-					<expression>&lt;th&gt;SINOPSIS&lt;/th&gt;\s*&lt;td&gt;([^&lt;]*)&lt;</expression>
-				</RegExp>
-				<expression>(.*)\(FILMAFFINITY\)</expression>
+			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="5+">
+				<expression>SINOPSIS&lt;/th&gt;\s*&lt;td&gt;(.*?)(\(FILMAFFINITY\)|&lt;/td&gt;)</expression>
 			</RegExp>
 			
 			<RegExp input="$$1" output="&lt;country&gt;\1&lt;/country&gt;" dest="5+">
@@ -126,7 +123,7 @@
 					<RegExp input="$$1" output="\1" dest="8">
 						<expression>&lt;th&gt;T&amp;Iacute\;TULO ORIGINAL&lt;/th&gt;\s*&lt;td&gt;&lt;strong&gt;(.*?)(\(AKA|&lt;/strong&gt;&lt;/td&gt;)</expression>
 					</RegExp>
-					<expression repeat="yes">([^ ,]+)</expression>
+					<expression repeat="yes">([^ ,&amp;]+)</expression>
 				</RegExp>
 				<RegExp input="$$6" output="+\1" dest="9+">
 					<RegExp input="$$1" output="\1" dest="6">

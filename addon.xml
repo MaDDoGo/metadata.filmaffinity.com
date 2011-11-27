@@ -2,7 +2,7 @@
 <addon id="metadata.filmaffinity.com"
        name="FilmAffinity"
        version="1.4.3"
-       provider-name="hectorZiN + MaDDoGo + agjacome">
+       provider-name="hectorZiN + MaDDoGo + agjacome + Lechu">
 <requires>
     <import addon="xbmc.metadata" version="1.0"/>
     <import addon="metadata.common.themoviedb.org" version="1.0"/>
