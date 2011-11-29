@@ -65,15 +65,21 @@
 				<expression repeat="yes">moviegenre.php?[^&gt;]*&gt;([^&lt;]*)</expression>
 			</RegExp>
 			
-			<RegExp conditional="!StudioFlagsON" input="$$1" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="5+"> <!-- Si la compatibilidad con estudios esta desactivada descarga todos las productoras (y es incompatible con skins si hay mas de una)-->
-                <expression>&lt;th&gt;PRODUCTORA&lt;/th&gt;\s*&lt;td&gt;([^&lt;]*)&lt;/td&gt;</expression> 
+			<!-- obtención de estudio (productora) -->
+			<!-- si "miniaturas de estudio" desactivado: descargamos todo -->
+			<RegExp conditional="!StudioFlagsON" input="$$9" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="5+">
+				<RegExp input="$$1" output="\1" dest="9">
+					<expression>PRODUCTORA&lt;/th&gt;\s*&lt;td&gt;([^&lt;]*)</expression>
+				</RegExp>
+				<expression repeat="yes" trim="1">([^,\;/]+)</expression>
 			</RegExp>
 			<!-- si activado: descargamos sólo la primera productora -->
 			<RegExp conditional="StudioFlagsON" input="$$9" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="5+">
 				<RegExp input="$$1" output="\1" dest="9">
 					<expression>PRODUCTORA&lt;/th&gt;\s*&lt;td&gt;([^&lt;/]*)</expression>
 				</RegExp>
-				<expression>([^/&lt;]*)</expression>
+				<!-- limpiamos cosas como "Coproducción Alemana-Francia;" -->
+				<expression trim="1">(?:(?:[^\;]*)\;\s)?(.*)</expression>
 			</RegExp>
 
 			<!-- obtención del director (o directores) -->
