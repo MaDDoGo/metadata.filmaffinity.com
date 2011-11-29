@@ -89,9 +89,13 @@
 				</RegExp>
 				<expression repeat="yes">a href="[^"]*"&gt;([^&lt;]+)&lt;/a&gt;</expression>
 			</RegExp>
-			
-			<RegExp input="$$1" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="5+">
-				<expression noclean="1">&lt;th&gt;GUI&amp;Oacute\;N&lt;/th&gt;\s*&lt;td&gt;(.*)&lt;/td&gt;\s*&lt;/tr&gt;\s*&lt;tr&gt;\s*&lt;th&gt;M&amp;Uacute\;SICA&lt;/th&gt;</expression>
+
+			<!-- obtención de guionistas -->
+			<RegExp input="$$9" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="5+">
+				<RegExp input="$$1" output="\1" dest="9">
+					<expression noclean="1">GUI&amp;Oacute\;N&lt;/th&gt;\s*&lt;td&gt;(.*?)&lt;/td</expression>
+				</RegExp>
+				<expression repeat="yes" trim="1">([^\;,\(\)]+)</expression>
 			</RegExp>
 			
 			<!-- obtención de puntuación en filmaffinity (no imdb) -->
