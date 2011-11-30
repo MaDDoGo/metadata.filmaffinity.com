@@ -148,6 +148,20 @@
 				<expression />
 			</RegExp>
 
+			<!-- url que le pasaremos a google, pra hacer búsqueda en alpacine -->
+			<RegExp conditional="EnableAlpacinePosters" input="$$9" output="&lt;url function=&quot;GoogleToAlpacine&quot;&gt;http://www.google.com/search?q=alpacine.com\1&lt;/url&gt;" dest="5+">
+				<RegExp input="$$8" output="+\1" dest="9">
+					<RegExp input="$$1" output="\1" dest="8">
+						<expression trim="1" noclean="1">movie.gif&quot; border=&quot;0&quot;&gt; (.*?)(\(AKA|&lt;)</expression>
+					</RegExp>
+					<expression repeat="yes">([^ ,&amp;]+)</expression>
+				</RegExp>
+				<RegExp input="$$6" output="+\1" dest="9+">
+					<expression>\s*([0-9]{4})</expression>
+				</RegExp>
+				<expression />
+			</RegExp>
+
 			<!-- descarga de trailers -->
 			<!-- configuración: hd-trailers 480p -->
 			<RegExp input="$INFO[TrailerQ]" output="&lt;chain function=&quot;GetHDTrailersnet480p&quot;&gt;$$6&lt;/chain&gt;" dest="5+">
@@ -251,6 +265,23 @@
 			<expression noclean="1" />
 		</RegExp>
 	</GoogleToIMDB>
+
+	<!-- función para la obtención del ID de Alpacine -->
+	<GoogleToAlpacine dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url function=&quot;GetAlpacinePosters&quot;&gt;http://alpacine.com/pelicula/\1/carteles/&lt;/url&gt;&lt;/details&gt;" dest="5">
+			<expression>&lt;a href=&quot;http://alpacine.com/pelicula/([0-9]*)/&quot;</expression>
+		</RegExp>
+	</GoogleToAlpacine>
+
+	<!-- función para la obtención de pósters de Alpacine -->
+	<GetAlpacinePosters dest="5">
+		<RegExp input="$$6" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;thumb&gt;http://img.alpacine.com/carteles/\1.jpg&lt;/thumb&gt;" dest="6">
+				<expression repeat="yes" noclean="1">src=&quot;http://img.alpacine.com/carteles/(.*?)\-100.jpg&quot; /&gt;</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetAlpacinePosters>
 
 	<!-- función para la obtención de pósters de FilmAffinity -->
 	<GetFilmAffinityPosters dest="5">
