@@ -1,3 +1,7 @@
+[B]1.4.5[/B]
+
+- Añadida la posibilidad de descargar información de colecciones.
+
 [B]1.4.4[/B]
 
 - Mejorada la obtención de guionistas desde filmaffinity.
