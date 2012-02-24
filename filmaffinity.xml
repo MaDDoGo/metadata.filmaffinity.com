@@ -266,10 +266,11 @@
 			<RegExp conditional="ExtraiMDB" input="" output="&lt;url function=&quot;GetImdbStuff&quot;&gt;http://www.imdb.com/title/tt$$6&lt;/url&gt;" dest="5+">
 				<expression />
 			</RegExp>
-            <!-- obtención de colección -->
-            <RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBSetByIdChain&quot;&gt;$$6&lt;/chain&gt;" dest="5+">
-                <expression />
-            </RegExp>
+			
+			<!-- obtención de colección desde TMDb-->
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBSetByIdChain&quot;&gt;tt$$6&lt;/chain&gt;" dest="5+">
+				<expression />
+			</RegExp>
 
 			<expression noclean="1" />
 		</RegExp>
