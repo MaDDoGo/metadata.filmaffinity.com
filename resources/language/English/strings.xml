@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <strings>
-    <string id="30000">Download cast from</string>
+	<string id="31001">FilmAffinity Options</string>
+	<string id="30011">Additional posters from FilmAffinity</string>
+    <string id="30008">Compatibility with studio logos</string>
     <string id="30001">Select trailer service</string>
-    <string id="30002">Download only Poster without fanart (faster)</string>
-    <string id="30003">Fanart from TheMovieDB</string>
-    <string id="30004">IMPAwards poster</string>
-    <string id="30005">MoviePosterDB poster</string>
-    <string id="30006">iMDB poster</string>
-    <string id="30007">TheMovieDB poster</string>
-    <string id="30008">Enable compatibility with Studio logos</string>
-    <string id="30009">Download extra iMDB information</string>
-    <string id="30010">Use iMDB rating</string>
-	<string id="30011">Download Extra Posters from Filmaffinity</string>
-    <string id="30012">Common Options</string>
-	<string id="30013">Download Posters, Fanarts, etc.</string>
-	<string id="30014">iMDB extra information</string>
-	<string id="30015">Alpacine poster (HQ)</string>
+	<string id="31002">Additional resources</string>
+    <string id="30002">Download information only from FilmAffinity (fast)</string>
+	<string id="30012">Additional information from IMDB</string>
+    <string id="30000">Use full cast (actor, rol and photo)</string>
+    <string id="30009">Slogan, MPAA rating, and Top 250</string>
+    <string id="30010">Use IMDB rating instead of FilmAffinity</string>
+	<string id="30013">FanArt and posters</string>
+    <string id="30003">FanArt from TheMovieDB</string>
+	<string id="30007">Posters from TheMovieDB</string>
+	<string id="30015">Poster language for TheMovieDB</string>
+	<string id="30016">Set poster from TheMovieDB</string>
+    <string id="30005">Posters from MoviePosterDB</string>
+    <string id="30004">Posters from IMPAwards</string>
+    <string id="30006">Pósters from IMDB</string>
 </strings>
