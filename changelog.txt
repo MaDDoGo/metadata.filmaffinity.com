@@ -6,6 +6,7 @@
 - Priorizados los posters de otras páginas sobre los de filmaffinity en caso de ser seleccionados
 - Mejorada la búsqueda principal usando funciones de búsqueda avanzada de google
 - Eliminado soporte de Alpacine ya que la página ha dejado de funcionar
+- Eliminada la opción de usar el reparto parcial de IMDB
 
 [B]1.4.5[/B]
 
