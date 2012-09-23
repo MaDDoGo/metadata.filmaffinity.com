@@ -1,6 +1,15 @@
+[B]1.4.6[/B]
+
+- Añadida la selección de idioma para los posters de TMDB (gracias XBMCSPAIN)
+- Opciones de configuración revisadas y reordenadas (gracias XBMCSPAIN)
+- Corregida la búsqueda rápida de recursos propios de FilmAffinity
+- Priorizados los posters de otras páginas sobre los de filmaffinity en caso de ser seleccionados
+- Mejorada la búsqueda principal usando funciones de búsqueda avanzada de google
+- Eliminado soporte de Alpacine ya que la página ha dejado de funcionar
+
 [B]1.4.5[/B]
 
-- Añadida la posibilidad de descargar información de colecciones.
+- Añadida la posibilidad de descargar información de colecciones de TMDB.
 
 [B]1.4.4[/B]
 
@@ -8,6 +17,7 @@
 - Mejorada la obtención de productoras desde filmaffintiy.
 - Corregido bug en descarga de primera productora cuando miniaturas de estudio está activo.
 - Añadido soporte completamente funcional para descargas de posters de Alpacine.
+- Eliminados todos los espacios en blanco extras en todos los textos descargados.
 
 [B]1.4.3[/B]
 
