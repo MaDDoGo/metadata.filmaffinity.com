@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <strings>
-    <string id="30000">Descargar Reparto de</string>
-    <string id="30001">Seleccionar Servicio de Trailers</string>
-    <string id="30002">Descargar solo Póster sin FanArt (rápido)</string>
+	<string id="31001">Opciones FilmAffinity</string>
+	<string id="30011">Posters adicionales de FilmAffinity</string>
+    <string id="30008">Compatibilidad con miniaturas de estudio</string>
+    <string id="30001">Seleccionar servicio de trailers</string>
+	<string id="31002">Recursos Adicionales</string>
+    <string id="30002">Descargar sólo información de FilmAffinity (rápido)</string>
+	<string id="30012">Información adicional de IMDB</string>
+    <string id="30000">Usar reparto completo (actor, rol y foto)</string>
+    <string id="30009">Descargar eslogan, clasificación por edades, y Top 250</string>
+    <string id="30010">Usar puntuación de IMDB en vez de FilmAffinity</string>
+	<string id="30013">FanArt y posters</string>
     <string id="30003">FanArt de TheMovieDB</string>
-    <string id="30004">Pósters de IMPAwards</string>
-    <string id="30005">Pósters de MoviePosterDB</string>
+	<string id="30007">Posters de TheMovieDB</string>
+	<string id="30015">Idioma para posters de TheMovieDB</string>
+	<string id="30016">Pósters de colecciones de TMDB</string>
+    <string id="30005">Posters de MoviePosterDB</string>
+    <string id="30004">Posters de IMPAwards</string>
     <string id="30006">Pósters de IMDB</string>
-	<string id="30007">Pósters de TheMovieDB</string>
-    <string id="30008">Compatibilidad con miniaturas de Estudio</string>
-    <string id="30009">Descargar Eslogan, Clasificación por edades, Top 250...</string>
-    <string id="30010">Usar Puntuación de iMDB</string>
-	<string id="30011">Pósters Extras de Filmaffinity</string>
-	<string id="30012">Opciones Generales</string>
-	<string id="30013">Descarga de Posters, Fanarts, etc...</string>
-	<string id="30014">Información extra de iMDB</string>
-	<string id="30015">Pósters de Alpacine (HQ)</string>
 </strings>
