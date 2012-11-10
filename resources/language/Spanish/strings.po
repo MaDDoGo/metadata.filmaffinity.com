@@ -10,14 +10,14 @@
 
 msgctxt "Addon Summary"
 msgid "Filmaffinity Movie Scraper"
-msgstr "Scraper de pel�culas de Filmaffinity"
+msgstr "Scraper de películas de Filmaffinity"
 
 msgctxt "Addon Description"
 msgid "Download Movie information from www.filmaffinity.com"
 msgstr ""
-"Scraper que usa la versi�n espa�ola de Filmaffinity para descargar "
-"informaci�n de pel�culas en espa�ol, ayud�ndose de varias p�ginas para "
-"ampliar la informaci�n."
+"Scraper que usa la versión española de Filmaffinity para descargar "
+"información de películas en español, ayudándose de varias páginas para "
+"ampliar la información."
 
 msgctxt "Addon Disclaimer"
 msgid "It's recommended to configure it before use"
@@ -28,40 +28,40 @@ msgid "General"
 msgstr "General"
 
 msgctxt "#30001"
-msgid "General options"
+msgid "General Options"
 msgstr "Opciones Generales"
 
 msgctxt "#30002"
+msgid "Show titles in their original language"
+msgstr "Mostrar títulos en su idioma original"
+
+msgctxt "#30003"
 msgid "Compatibility with Studio logos"
 msgstr "Compatibilidad con miniaturas de Estudio"
 
-msgctxt "#30003"
-msgid "Get Set (Collection) Titles from TheMovieDB"
-msgstr "Obtener t�tulos de colecciones de TheMovieDB"
-
 msgctxt "#30004"
-msgid "Preferred Set (Collection) Titles Language"
-msgstr "Idioma de los t�tulos de colecciones de TheMovieDB"
+msgid "Advanced Search"
+msgstr "Búsqueda Avanzada"
+
+msgctxt "#30005"
+msgid "Use Google search (read the documentation)"
+msgstr "Usar búsqueda en Google (leer antes la documentación)"
 
 msgctxt "#30006"
-msgid "IMDB Sources"
-msgstr "Servicios de IMDB"
+msgid "Documentation"
+msgstr "Documentación"
 
 msgctxt "#30007"
-msgid "Use IMDB full cast (actor, rol and picture)"
-msgstr "Usar reparto completo de IMDB (actor, rol y foto)"
+msgid "About Google advanced search"
+msgstr "Acerca de la búsqueda avanzada de Google"
 
 msgctxt "#30008"
-msgid "Extra information (Slogan, MPAA, Top 250)"
-msgstr "Informaci�n extra (Eslogan, Clasificaci�n por edades, Top 250)"
-
-msgctxt "#30009"
-msgid "Use IMDB ratings"
-msgstr "Usar puntuaciones de IMDB"
+msgid "Show changelog"
+msgstr "Ver registro de cambios"
 
 msgctxt "#30100"
-msgid "Search info only from Filmaffinity (faster)"
-msgstr "Buscar s�lo informaci�n en Filmaffinity (r�pido)"
+msgid "(debug)Search info only from Filmaffinity (faster)"
+msgstr "(debug)Buscar sólo información en Filmaffinity (rápido)"
 
 msgctxt "#30020"
 msgid "Posters"
@@ -72,16 +72,16 @@ msgid "Posters Sources"
 msgstr "Servicios de Posters"
 
 msgctxt "#30022"
-msgid "Filmaffinity main poster (faster)"
-msgstr "P�ster principal de FilmAffinity (r�pido)"
+msgid "Filmaffinity main poster (quick download)"
+msgstr "Poster principal de FilmAffinity (descarga rápida)"
 
 msgctxt "#30023"
 msgid "TheMovieDB posters"
 msgstr "Posters de TheMovieDB"
 
 msgctxt "#30024"
-msgid "Preferred Posters Language"
-msgstr "Idioma de los posters de TheMovieDB"
+msgid " -> TheMovieDB posters language"
+msgstr " -> Idioma de los posters de TheMovieDB"
 
 msgctxt "#30025"
 msgid "MoviePosterDB posters"
@@ -103,38 +103,78 @@ msgctxt "#30029"
 msgid "FilmAffinity extra posters"
 msgstr "Posters extra de FilmAffinity"
 
-msgctxt "#30030"
+msgctxt "#30040"
 msgid "FanArts"
 msgstr "FanArts"
 
-msgctxt "#30031"
+msgctxt "#30041"
 msgid "FanArts Sources"
 msgstr "Servicios de FanArts"
 
-msgctxt "#30032"
+msgctxt "#30042"
 msgid "TheMovieDB FanArts"
 msgstr "FanArts de TheMovieDB"
 
-msgctxt "#30033"
+msgctxt "#30043"
 msgid "Trackt FanArts"
 msgstr "FanArts de Trackt"
 
-msgctxt "#30040"
+msgctxt "#30060"
 msgid "Trailers"
 msgstr "Trailers"
 
-msgctxt "#30041"
+msgctxt "#30061"
 msgid "Trailers Sources"
-msgstr "Servicio de trailers"
+msgstr "Servicios de Trailers"
 
-msgctxt "#30042"
-msgid "Select Trailers from"
-msgstr "Ver trailers de"
+msgctxt "#30062"
+msgid "FilmAffinity Trailer"
+msgstr "Trailer de FilmAffinity"
 
-msgctxt "#30043"
+msgctxt "#30063"
 msgid "TheMovieDB Trailers"
-msgstr "Trailers de TheMovieDB"
+msgstr "Trailer de TheMovieDB"
 
-msgctxt "#30044"
-msgid "Preferred Trailer Language"
-msgstr "Idioma de los trailers de TheMovieDB"
+msgctxt "#30064"
+msgid " -> TheMovieDB trailer language"
+msgstr " -> Idioma del trailer de TheMovieDB"
+
+msgctxt "#30065"
+msgid "Trailer HD-Trailers"
+msgstr "Trailer de HD-Trailers"
+
+msgctxt "#30066"
+msgid " -> HD-Trailers quality"
+msgstr " -> Calidad del trailer de HD-Trailers"
+
+msgctxt "#30080"
+msgid "Extra"
+msgstr "Extra"
+
+msgctxt "#30081"
+msgid "Collections Titles"
+msgstr "Títulos de Colecciones"
+
+msgctxt "#30082"
+msgid "Get Set (Collection) Titles from TheMovieDB"
+msgstr "Obtener títulos de colecciones de TheMovieDB"
+
+msgctxt "#30083"
+msgid " -> Preferred Set (Collection) Titles Language"
+msgstr " -> Idioma de los títulos de colecciones de TheMovieDB"
+
+msgctxt "#30084"
+msgid "IMDB Sources"
+msgstr "Servicios de IMDB"
+
+msgctxt "#30085"
+msgid "Use IMDB full cast (actor, rol and picture)"
+msgstr "Usar reparto completo de IMDB (actor, rol y foto)"
+
+msgctxt "#30086"
+msgid "Extra information (Slogan, MPAA, Top 250)"
+msgstr "Información extra (Eslogan, Clasificación por edades, Top 250)"
+
+msgctxt "#30087"
+msgid "Use IMDB ratings"
+msgstr "Usar puntuaciones de IMDB"
