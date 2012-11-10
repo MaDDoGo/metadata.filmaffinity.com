@@ -14,10 +14,7 @@ msgstr "Scraper de películas de Filmaffinity"
 
 msgctxt "Addon Description"
 msgid "Download Movie information from www.filmaffinity.com"
-msgstr ""
-"Scraper que usa la versión española de Filmaffinity para descargar "
-"información de películas en español, ayudándose de varias páginas para "
-"ampliar la información."
+msgstr "Scraper que usa la versión española de Filmaffinity para descargar información de películas en español, ayudándose de varias páginas para ampliar la información."
 
 msgctxt "Addon Disclaimer"
 msgid "It's recommended to configure it before use"
