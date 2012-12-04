@@ -39,7 +39,7 @@
 	</GetSearchResults>
 
 	<!-- obtención de los detalles de la película -->
-	<GetDetails dest="3" clearbuffers="no">
+	<GetDetails dest="3">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
 
 			<!-- obtención de título -->
