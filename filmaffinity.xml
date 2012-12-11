@@ -175,7 +175,7 @@
 				</RegExp>
 				<!-- descomponemos en palabras el título original al completo -->
 				<RegExp conditional="GoogleAdvSearch" input="$$12" output="\1+" dest="9">
-					<expression repeat="yes">(\w+)</expression>
+					<expression repeat="yes">(\S+)</expression>
 				</RegExp>
 				<!-- búsqueda en google, con el año -->
 				<RegExp conditional="GoogleAdvSearch" input="$$9" output="http://www.google.com/search?q=site:imdb.com+\1($$13)" dest="9">
