@@ -15,7 +15,7 @@
 			<expression noclean="1" />
 		</RegExp>
 		<!-- búsqueda en filmaffinity a través de google -->
-		<RegExp conditional="GoogleAdvSearch" input="$$1" output="&lt;url&gt;http://www.google.es/search?sourceid=navclient&amp;q=filmaffinity+\1+$$2&lt;/url&gt;" dest="3">
+		<RegExp conditional="GoogleAdvSearch" input="$$1" output="&lt;url&gt;http://www.google.com/search?sourceid=navclient&amp;q=filmaffinity+\1+$$2&lt;/url&gt;" dest="3">
 			<expression noclean="1" />
 		</RegExp>
 	</CreateSearchUrl>
@@ -34,7 +34,7 @@
 				</RegExp>
 				<expression>([0-9]*) (.*) -</expression>
 			</RegExp>
-			<expression noclean="1"/>
+			<expression noclean="1" />
 		</RegExp>
 	</GetSearchResults>
 
@@ -52,10 +52,10 @@
 				<expression trim="1">T&amp;Iacute\;TULO ORIGINAL&lt;/th&gt;\s*&lt;td&gt;&lt;strong&gt;(.*?)(&lt;|\(AKA)</expression>
 			</RegExp>
 			<RegExp input="$$12" conditional="EnableOriginalTitles" output="&lt;title&gt;\1&lt;/title&gt;" dest="5">
-				<expression noclean="1"/>
+				<expression noclean="1" />
 			</RegExp>
 			<RegExp input="$$12" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;" dest="5+">
-				<expression noclean="1"/>
+				<expression noclean="1" />
 			</RegExp>
 
 			<!-- obtención del año -->
@@ -63,7 +63,7 @@
 				<expression>A&Ntilde;O&lt;/th&gt;\s*&lt;td&gt;.*?\s*([0-9]{4})\s*&lt;/td&gt;</expression>
 			</RegExp>
 			<RegExp input="$$13" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
-				<expression noclean="1"/>
+				<expression noclean="1" />
 			</RegExp>
 
 			<!-- obtención del director (o directores) sin iniciales -->
