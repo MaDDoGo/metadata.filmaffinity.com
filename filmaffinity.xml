@@ -162,20 +162,18 @@
 
 			<!-- obtención del IMDBid -->
 			<RegExp conditional="!EnableFastSearch" input="$$9" output="&lt;url function=&quot;GetIMDBid&quot;&gt;\1&lt;/url&gt;" dest="5+">
-				<!-- descomponemos en palabras el título original hasta encontrar (o no) un paréntesis -->
-				<RegExp conditional="!GoogleAdvSearch" input="$$9" output="\1+" dest="9">
-					<RegExp input="$$12" output="\1" dest="9">
-						<expression>([^\(]+)</expression>
-					</RegExp>
-					<expression repeat="yes">(\w+)</expression>
+				<!-- descomponemos en palabras el título original y las unimos con "+" -->
+				<RegExp input="$$12" output="\1+" dest="9">
+					<!-- caracteres válidos: letras en cualquier idioma, números, y aperturas de paréntesis -->
+					<expression repeat="yes">([\p{L}\p{N}\(]+)</expression>
 				</RegExp>
 				<!-- búsqueda en imdb, sin el año -->
 				<RegExp conditional="!GoogleAdvSearch" input="$$9" output="http://www.imdb.com/xml/find?xml=1&nr=1&tt=on&q=\1" dest="9">
+					<!-- nos quedamos con el título original sólo hasta encontrar (o no) una apertura de paréntesis -->
+					<RegExp input="$$9" output="\1" dest="9">
+						<expression>([^\(]+)</expression>
+					</RegExp>
 					<expression />
-				</RegExp>
-				<!-- descomponemos en palabras el título original al completo -->
-				<RegExp conditional="GoogleAdvSearch" input="$$12" output="\1+" dest="9">
-					<expression repeat="yes">(\S+)</expression>
 				</RegExp>
 				<!-- búsqueda en google, con el año -->
 				<RegExp conditional="GoogleAdvSearch" input="$$9" output="http://www.google.com/search?q=site:imdb.com+\1($$13)" dest="9">
