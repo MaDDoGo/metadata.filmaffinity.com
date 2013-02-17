@@ -1,3 +1,7 @@
+[B]1.5.4[/B]
+
+- Mejorada la obtención de información extra (Top 250, calificación MPAA, eslogan, puntuación y número de votos) de IMDB
+
 [B]1.5.3[/B]
 
 - Mejoradas tanto la búsqueda en Google como la obtención de información extra
