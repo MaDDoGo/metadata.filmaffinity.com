@@ -391,7 +391,6 @@
 			<!-- obtención de eslogan -->
 			<RegExp input="$$1" output="&lt;tagline&gt;\1&lt;/tagline&gt;" dest="6+">
 				<expression>Tagline:.*?class=&quot;info-content&quot;&gt;([^&lt;]+)</expression>
-
 			</RegExp>
 
 			<expression noclean="1" />
