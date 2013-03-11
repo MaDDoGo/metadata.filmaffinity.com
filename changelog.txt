@@ -1,6 +1,7 @@
 [B]1.5.5[/B]
 
-- Mejorada la búsqueda de títulos con caracteres especiales en filmaffinity
+- Mejorada la búsqueda de títulos en filmaffinity con caracteres especiales
+- Mejorada la búsqueda de títulos en google permitiendo múltiples resultados
 
 [B]1.5.4[/B]
 
