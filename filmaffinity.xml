@@ -34,7 +34,7 @@
 			</RegExp>
 			<!-- búsqueda de google -->
 			<RegExp conditional="GoogleAdvSearch" input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;url&gt;http://www.filmaffinity.com/es/film\1.html&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5">
-				<expression repeat="yes">/film([0-9]*).html&amp;[^&gt;]*&gt;(.*?)( - &lt;b&gt;FilmAffinity&lt;/b&gt;)?&lt;/a&gt;</expression>
+				<expression repeat="yes">/film([0-9]*).html&amp;[^&gt;]*&gt;(.*?)( - [&lt;F].*?)?&lt;/a&gt;</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
