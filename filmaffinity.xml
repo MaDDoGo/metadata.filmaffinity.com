@@ -51,7 +51,7 @@
 
 			<!-- obtención de título original -->
 			<RegExp input="$$1" output="\1" dest="12">
-				<expression trim="1">T&iacute;tulo original&lt;/dt&gt;[^&gt;]*?&gt;(.*?)(&lt;|\(AKA)</expression>
+				<expression trim="1">T[í&iacute;]tulo original&lt;/dt&gt;[^&gt;]*?&gt;(.*?)(&lt;|\(AKA)</expression>
 			</RegExp>
 			<RegExp input="$$12" conditional="EnableOriginalTitles" output="&lt;title&gt;\1&lt;/title&gt;" dest="5">
 				<expression noclean="1" />
@@ -62,7 +62,7 @@
 
 			<!-- obtención del año -->
 			<RegExp input="$$1" output="\1" dest="13">
-				<expression>A&ntilde;o&lt;/dt&gt;[^&gt;]*?&gt;([0-9]{4})</expression>
+				<expression>A[ñ&ntilde;]o&lt;/dt&gt;[^&gt;]*?&gt;([0-9]{4})</expression>
 			</RegExp>
 			<RegExp input="$$13" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
 				<expression noclean="1" />
@@ -122,7 +122,7 @@
 			<!-- obtención de guionistas -->
 			<RegExp input="$$9" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="5+">
 				<RegExp input="$$1" output="\1" dest="9">
-					<expression>Gui&oacute;n&lt;/dt&gt;[^&gt;]*?&gt;(.*?)(\(|&lt;)</expression>
+					<expression>Gui[ó&oacute;]n&lt;/dt&gt;[^&gt;]*?&gt;(.*?)(\(|&lt;)</expression>
 				</RegExp>
 				<expression repeat="yes" trim="1">(.*?)(&amp;amp;|;|,|$)</expression>
 			</RegExp>
@@ -144,7 +144,7 @@
 
 			<!-- obtención de duración -->
 			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
-				<expression>Duraci&oacute;n&lt;/dt&gt;[^&gt;]*?&gt;([0-9]*)</expression>
+				<expression>Duraci[ó&oacute;]n&lt;/dt&gt;[^&gt;]*?&gt;([0-9]*)</expression>
 			</RegExp>
 
 			<!-- obtención de listado de actores desde filmaffinity (si búsqueda rápida) -->
