@@ -9,7 +9,6 @@
 	<setting label="30006" type="lsep" />
 	<setting label="30007" type="action" action="RunScript($CWD/lib/viewer.py,GoogleAdvancedSearch)" default="" />
 	<setting label="30008" type="action" action="RunScript($CWD/lib/viewer.py,changelog)" default="" />
-	<setting label="30999" type="bool" id="EnableFastSearch" default="false" visible="false" />
   </category>
   <category label="30020">
 	<setting label="30021" type="lsep" />
