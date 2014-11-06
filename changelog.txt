@@ -1,3 +1,7 @@
+[B]1.6.2[/B]
+
+- Revisada la carga de información de ficheros .nfo
+
 [B]1.6.1[/B]
 
 - Añadida la posibilidad de elegir entre la web móvil o principal de FilmAffinity
