@@ -1,6 +1,7 @@
 [B]1.6.2[/B]
 
 - Revisada la carga de información de ficheros .nfo
+- Revisada la obtención del póster principal de FilmAffinity
 
 [B]1.6.1[/B]
 
