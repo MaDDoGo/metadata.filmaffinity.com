@@ -264,8 +264,8 @@
 			</RegExp>
 
 			<!-- descarga el poster principal de filmaffinity -->
-			<RegExp conditional="FirstFilmAffinityPoster" input="$$1" output="&lt;thumb aspect=&quot;poster&quot;&gt;http://pics.filmaffinity.com/\1&lt;/thumb&gt;" dest="5+">
-				<expression noclean="1">pics.filmaffinity.com/([^&quot;]+)</expression>
+			<RegExp conditional="FirstFilmAffinityPoster" input="$$1" output="&lt;thumb aspect=&quot;poster&quot;&gt;http://pics.filmaffinity.com/\2&lt;/thumb&gt;" dest="5+">
+				<expression noclean="1">(href|src)=&quot;http://pics.filmaffinity.com/([^&quot;]+)</expression>
 			</RegExp>
 			
 			<!-- descarga todos los posters que haya en filmaffinity -->
