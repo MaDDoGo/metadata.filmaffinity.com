@@ -118,7 +118,7 @@
 				<RegExp conditional="FAmobile" input="$$1" output="\1" dest="9">
 					<expression noclean="1">DIRECTOR&lt;/span&gt;[^&gt;]+&gt;(.+?)&lt;/div</expression>
 				</RegExp>
-				<expression repeat="yes" trim="1">&quot;&gt;([^,&lt;]+)&lt;/a&gt;</expression>
+				<expression repeat="yes" trim="1">&quot;&gt;([^,&lt;]+)&lt;/(a|span)&gt;</expression>
 			</RegExp>
 			<!-- dirección (apellidos) para refinar búsqueda del IMDBid -->
 			<RegExp input="$$5" output="\1|" dest="14">
