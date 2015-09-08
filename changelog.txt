@@ -1,6 +1,7 @@
 [B]1.6.3[/B]
 
 - Revisada la búsqueda de director
+- Revisada la búsqueda de puntuación FA
 
 [B]1.6.2[/B]
 
