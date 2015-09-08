@@ -118,6 +118,7 @@
 				<RegExp conditional="FAmobile" input="$$1" output="\1" dest="9">
 					<expression noclean="1">DIRECTOR&lt;/span&gt;[^&gt;]+&gt;(.+?)&lt;/div</expression>
 				</RegExp>
+				<!-- <expression repeat="yes" trim="1">&quot;&gt;([^,&lt;]+)&lt;/a&gt;</expression> -->
 				<expression repeat="yes" trim="1">&quot;&gt;([^,&lt;]+)&lt;/(a|span)&gt;</expression>
 			</RegExp>
 			<!-- dirección (apellidos) para refinar búsqueda del IMDBid -->
@@ -180,17 +181,17 @@
 			
 			<!-- puntuación y número de votos -->
 			<RegExp conditional="!IMDBRatings" input="$$9" output="\1" dest="5+">
-				<RegExp conditional="!FAmobile" input="$$1" output="&lt;rating&gt;\1.\2&lt;/rating&gt;" dest="9">
-					<expression>movie-rat-avg&quot;[^0-9]+([0-9]),([0-9])</expression>
+				<RegExp conditional="!FAmobile" input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;" dest="9">
+					<expression>ratingValue&quot;[^0-9]+([0-9.]+)</expression>
 				</RegExp>
 				<RegExp conditional="!FAmobile" input="$$1" output="&lt;votes&gt;\1&lt;/votes&gt;" dest="9+">
-					<expression>movie-count-rat&quot;[^0-9]+([0-9\.]+)</expression>
+					<expression>ratingCount&quot;[^0-9]+([0-9.]+)</expression>
 				</RegExp>
 				<RegExp conditional="FAmobile" input="$$1" output="&lt;rating&gt;\1.\2&lt;/rating&gt;" dest="9">
 					<expression>movie-rating&quot;&gt;([0-9]),([0-9])</expression>
 				</RegExp>
 				<RegExp conditional="FAmobile" input="$$1" output="&lt;votes&gt;\1&lt;/votes&gt;" dest="9+">
-					<expression>count&quot;&gt;([0-9\.]+)</expression>
+					<expression>count&quot;&gt;([0-9.]+)</expression>
 				</RegExp>
 				<expression noclean="1" />
 			</RegExp>
