@@ -239,28 +239,7 @@
 				</RegExp>
 				<expression noclean="1" />
 			</RegExp>
-
-			<!-- hd-trailers 480p -->
-			<RegExp conditional="EnableHDTrailers" input="$INFO[HDTrailersQ]" output="&lt;chain function=&quot;GetHDTrailersnet480p&quot;&gt;$$6&lt;/chain&gt;" dest="5+">
-				<RegExp input="$$5" output="\1" dest="6">
-					<expression noclean="1">&lt;originaltitle&gt;([^&lt;]+)</expression>
-				</RegExp>
-				<expression>HD-Trailers\(480p\)</expression>
-			</RegExp>
-			<!-- hd-trailers 720p -->
-			<RegExp conditional="EnableHDTrailers" input="$INFO[HDTrailersQ]" output="&lt;chain function=&quot;GetHDTrailersnet720p&quot;&gt;$$6&lt;/chain&gt;" dest="5+">
-				<RegExp input="$$5" output="\1" dest="6">
-					<expression noclean="1">&lt;originaltitle&gt;([^&lt;]+)</expression>
-				</RegExp>
-				<expression>HD-Trailers\(720p\)</expression>
-			</RegExp>
-			<!-- hd-trailers 1080p -->
-			<RegExp conditional="EnableHDTrailers" input="$INFO[HDTrailersQ]" output="&lt;chain function=&quot;GetHDTrailersnet1080p&quot;&gt;$$6&lt;/chain&gt;" dest="5+">
-				<RegExp input="$$5" output="\1" dest="6">
-					<expression noclean="1">&lt;originaltitle&gt;([^&lt;]+)</expression>
-				</RegExp>
-				<expression>HD-Trailers\(1080p\)</expression>
-			</RegExp>
+		
 			<!-- trailer de filmaffinity -->
 			<RegExp conditional="EnableFATrailer" input="$$16" output="&lt;url function=&quot;GetFilmAffinityTrailer&quot;&gt;http://www.filmaffinity.com/es/movieTrailer.php?id=\1&lt;/url&gt;" dest="5+">
 				<expression noclean="1" />
@@ -325,10 +304,6 @@
 			
 			<!-- obtención de los posters de MoviePosterDB -->
 			<RegExp conditional="EnableMoviePosterDB" input="$$6" output="&lt;chain function=&quot;GetMoviePosterDBThumbs&quot;&gt;tt\1&lt;/chain&gt;" dest="5+">
-				<expression noclean="1" />
-			</RegExp>
-			<!-- obtención de los posters de IMPAwards -->
-			<RegExp conditional="EnableIMPAwards" input="$$6" output="&lt;chain function=&quot;GetIMPAThumbsById&quot;&gt;tt\1&lt;/chain&gt;" dest="5+">
 				<expression noclean="1" />
 			</RegExp>
 			<!-- obtención del poster de trakt.tv -->
