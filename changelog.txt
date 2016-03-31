@@ -1,3 +1,8 @@
+[B]1.6.4[/B]
+
+- Revisada la búsqueda de país
+- Limpiadas las referencias a IMPA - HDTrailers
+
 [B]1.6.3[/B]
 
 - Revisada la búsqueda de director

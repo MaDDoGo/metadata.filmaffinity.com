@@ -160,7 +160,7 @@
 			
 			<!-- país -->
 			<RegExp conditional="!FAmobile" input="$$1" output="&lt;country&gt;\1&lt;/country&gt;" dest="5+">
-				<expression>countries/...jpg&quot; title=&quot;([^&quot;]+)</expression>
+				<expression>countries/...jpg&quot; [^=]+=&quot;([^&quot;]+)</expression>
 			</RegExp>
 			<RegExp conditional="FAmobile" input="$$1" output="&lt;country&gt;\2&lt;/country&gt;" dest="5+">
 				<expression trim="1">PA&Iacute;S&lt;/span&gt;[^&gt;]+&gt;[^&gt;]+&gt;(&nbsp;)*([^&lt;]+)</expression>
