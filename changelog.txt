@@ -1,3 +1,8 @@
+[B]1.7.0[/B]
+
+- Búsqueda unificada tanto en FA como en FA mobile
+- Se mantiene la elección de FA o FA mobile para dar redundancia
+
 [B]1.6.4[/B]
 
 - Revisada la búsqueda de país
