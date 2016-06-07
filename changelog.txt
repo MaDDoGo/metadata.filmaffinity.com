@@ -1,3 +1,7 @@
+[B]1.7.1[/B]
+
+- Revisada la búsqueda avanzada de título en FA
+
 [B]1.7.0[/B]
 
 - Búsqueda unificada tanto en FA como en FA mobile

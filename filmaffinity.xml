@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<scraper framework="1.1" date="2016-06-01">
+<scraper framework="1.1" date="2016-06-07">
 
 	<!--obtención de la url desde el fichero .nfo -->
 	<NfoUrl dest="3">
@@ -40,7 +40,7 @@
 		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot;; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="8">
 			<!-- búsqueda de filmaffinity -->
 			<RegExp conditional="!GoogleAdvSearch" input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 (\3)&lt;/title&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5">
-				<expression repeat="yes" noclean="1,2,3">film([0-9]+)\.html&quot;&gt;([^&lt;]+)&lt;/a&gt;[^\(]*\(([0-9]{4})</expression>
+				<expression repeat="yes" noclean="1,2,3">film([0-9]+)\.[^&gt;]+&gt;([^&lt;]+)&lt;/a&gt;[^\(]*\(([0-9]{4})</expression>
 			</RegExp>
 			<!-- búsqueda de google -->
 			<RegExp conditional="GoogleAdvSearch" input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5">
