@@ -1,7 +1,3 @@
-[B]1.7.2[/B]
-
-- Corregida la búsqueda de género para no incluir topics
-
 [B]1.7.1[/B]
 
 - Revisada la búsqueda avanzada de título en FA
