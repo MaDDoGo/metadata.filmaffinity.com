@@ -90,7 +90,7 @@
 			<!-- título original -->
 			<!-- eliminar "(Disneys's )?" y usar \1 cuando filmaffinity deje de añadirlo) -->
 			<RegExp input="$$1" output="\2" dest="12">
-				<expression trim="1">Título original&lt;/dt&gt;(Disney's )?(.+?)(\(AKA|&lt;/dd&gt;)</expression>
+				<expression trim="1">Título original&lt;/dt&gt;(Disney's )?(.+?)(\(AKA|aka +&lt;|&lt;/dd&gt;)</expression>
 			</RegExp>
 			<RegExp input="$$12" conditional="EnableOriginalTitles" output="&lt;title&gt;\1&lt;/title&gt;" dest="5">
 				<expression noclean="1" />

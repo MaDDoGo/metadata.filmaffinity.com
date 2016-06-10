@@ -1,6 +1,7 @@
 [B]1.7.1[/B]
 
 - Revisada la búsqueda avanzada de título en FA
+- Revisada la búsqueda de título original en FA
 - Corregida la búsqueda de género para no incluir topics
 
 [B]1.7.0[/B]
