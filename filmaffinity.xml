@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<scraper framework="1.1" date="2017-03-14">
+<scraper framework="1.1" date="2017-05-30">
 
 	<!--obtención de la url desde el fichero .nfo -->
 	<NfoUrl dest="3">
-		<RegExp conditional="!FAmobile" input="$$5" output="&lt;url&gt;http://www.filmaffinity.com/es/film\1.html\2&lt;/url&gt;" dest="3">
+		<RegExp conditional="!FAmobile" input="$$5" output="&lt;url&gt;https://www.filmaffinity.com/es/film\1.html\2&lt;/url&gt;" dest="3">
 			<RegExp input="$$1" output="\2;" dest="5">
 				<expression noclean="1">/(www|m).filmaffinity.com/[^/]+/[^0-9]+([0-9]+)</expression>
 			</RegExp>
@@ -12,7 +12,7 @@
 			</RegExp>
 			<expression noclean="1">([0-9]+);(.*)</expression>
 		</RegExp>
-		<RegExp conditional="FAmobile" input="$$5" output="&lt;url&gt;http://m.filmaffinity.com/es/movie.php?id=\1\2&lt;/url&gt;" dest="3">
+		<RegExp conditional="FAmobile" input="$$5" output="&lt;url&gt;https://m.filmaffinity.com/es/movie.php?id=\1\2&lt;/url&gt;" dest="3">
 			<RegExp input="$$1" output="\2;" dest="5">
 				<expression noclean="1">/(www|m).filmaffinity.com/[^/]+/[^0-9]+([0-9]+)</expression>
 			</RegExp>
@@ -26,7 +26,7 @@
 	<!-- búsqueda principal -->
 	<CreateSearchUrl SearchStringEncoding="UTF-8" dest="3">
 		<!-- búsqueda de filmaffinity usando título y año -->
-		<RegExp conditional="!GoogleAdvSearch" input="$$1" output="&lt;url&gt;http://www.filmaffinity.com/es/advsearch.php?stype[]=title&amp;fromyear=$$2&amp;toyear=$$2&amp;stext=\1&lt;/url&gt;" dest="3">
+		<RegExp conditional="!GoogleAdvSearch" input="$$1" output="&lt;url&gt;https://www.filmaffinity.com/es/advsearch.php?stype[]=title&amp;fromyear=$$2&amp;toyear=$$2&amp;stext=\1&lt;/url&gt;" dest="3">
 			<expression noclean="1" />
 		</RegExp>
 		<!-- búsqueda en filmaffinity a través de google -->
@@ -47,11 +47,11 @@
 				<expression repeat="yes">/film([0-9]+).html&amp;[^&gt;]+&gt;(.+?)( - [&lt;F].+?)?&lt;/a&gt;</expression>
 			</RegExp>
 			<!-- resultados de la web principal -->
-			<RegExp conditional="!FAmobile" input="$$5" output="\1&lt;url&gt;http://www.filmaffinity.com/es/film\2.html&lt;/url&gt;&lt;/entity&gt;" dest="5">
+			<RegExp conditional="!FAmobile" input="$$5" output="\1&lt;url&gt;https://www.filmaffinity.com/es/film\2.html&lt;/url&gt;&lt;/entity&gt;" dest="5">
 				<expression repeat="yes" noclean="1">(&lt;entity&gt;.+?([0-9]+)&lt;/id&gt;)&lt;/entity&gt;</expression>
 			</RegExp>
 			<!-- resultados de la web móvil -->
-			<RegExp conditional="FAmobile" input="$$5" output="\1&lt;url&gt;http://m.filmaffinity.com/es/movie.php?id=\2&lt;/url&gt;&lt;/entity&gt;" dest="5">
+			<RegExp conditional="FAmobile" input="$$5" output="\1&lt;url&gt;https://m.filmaffinity.com/es/movie.php?id=\2&lt;/url&gt;&lt;/entity&gt;" dest="5">
 				<expression repeat="yes" noclean="1">(&lt;entity&gt;.+?([0-9]+)&lt;/id&gt;)&lt;/entity&gt;</expression>
 			</RegExp>
 			<!-- en caso de que haya más de 10 páginas de resultados en FA asumimos un error en la búsqueda -->
@@ -211,17 +211,17 @@
 			</RegExp>
 		
 			<!-- trailer de filmaffinity -->
-			<RegExp conditional="EnableFATrailer" input="$$16" output="&lt;url function=&quot;GetFilmAffinityTrailer&quot;&gt;http://www.filmaffinity.com/es/movieTrailer.php?id=\1&lt;/url&gt;" dest="5+">
+			<RegExp conditional="EnableFATrailer" input="$$16" output="&lt;url function=&quot;GetFilmAffinityTrailer&quot;&gt;https://www.filmaffinity.com/es/movieTrailer.php?id=\1&lt;/url&gt;" dest="5+">
 				<expression noclean="1" />
 			</RegExp>
 
 			<!-- descarga el poster principal de filmaffinity -->
-			<RegExp conditional="FirstFilmAffinityPoster" input="$$1" output="&lt;thumb aspect=&quot;poster&quot;&gt;http://pics.filmaffinity.com/\2&lt;/thumb&gt;" dest="5+">
-				<expression noclean="1">(href|src)=&quot;http://pics.filmaffinity.com/([^&quot;]+)</expression>
+			<RegExp conditional="FirstFilmAffinityPoster" input="$$1" output="&lt;thumb aspect=&quot;poster&quot;&gt;\2&lt;/thumb&gt;" dest="5+">
+				<expression noclean="1">(href|src)=&quot;(https://pics.filmaffinity.com/[^&quot;]+)</expression>
 			</RegExp>
 			
 			<!-- descarga todos los posters que haya en filmaffinity -->
-			<RegExp conditional="EnableFilmAffinityPosters" input="$$16" output="&lt;url function=&quot;GetFilmAffinityPosters&quot;&gt;http://www.filmaffinity.com/es/filmimages.php?movie_id=\1&lt;/url&gt;" dest="5+">
+			<RegExp conditional="EnableFilmAffinityPosters" input="$$16" output="&lt;url function=&quot;GetFilmAffinityPosters&quot;&gt;https://www.filmaffinity.com/es/filmimages.php?movie_id=\1&lt;/url&gt;" dest="5+">
 				<expression noclean="1" />
 			</RegExp>
 			
@@ -358,8 +358,8 @@
 	<!-- función para la obtención de posters de filmaffinity -->
 	<GetFilmAffinityPosters dest="5">
 		<RegExp input="$$10" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
-			<RegExp input="$$1" output="&lt;thumb aspect=&quot;poster&quot;&gt;http://pics.filmaffinity.com/\1&lt;/thumb&gt;" dest="10">
-				<expression repeat="yes" noclean="1">pics.filmaffinity.com/([^&quot;]+)&quot; title=&quot;[^&quot;]+?Poster</expression>
+			<RegExp input="$$1" output="&lt;thumb aspect=&quot;poster&quot;&gt;\1&lt;/thumb&gt;" dest="10">
+				<expression repeat="yes" noclean="1">(https://pics.filmaffinity.com/[^&quot;]+)&quot; title=&quot;[^&quot;]+?Poster</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>

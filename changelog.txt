@@ -1,3 +1,7 @@
+[B]1.7.4[/B]
+
+- Cambiadas las rutas http por https en FA
+
 [B]1.7.3[/B]
 
 - Revisadas las búsquedas de título original,
