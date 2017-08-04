@@ -1,3 +1,7 @@
+[B]1.7.5[/B]
+
+- Eliminada la obtención de posters de movieposterdb
+
 [B]1.7.4[/B]
 
 - Cambiadas las rutas http por https en FA

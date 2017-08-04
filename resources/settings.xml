@@ -17,7 +17,6 @@
 		<setting label="30039" type="bool" id="EnableFilmAffinityPosters" default="false" />
 		<setting label="30023" type="bool" id="EnableTMDBPoster" default="false" />
 		<setting label="30024" type="labelenum" id="tmdbthumblanguage" default="es" values="da|fi|nl|de|it|es|fr|pl|hu|el|tr|ru|he|ja|pt|zh|cs|sl|hr|ko|us|gb|sv|no" />
-		<setting label="30025" type="bool" id="EnableMoviePosterDB" default="false" />
 		<setting label="30026" type="bool" id="EnableIMDBPosters" default="false" />
 		<setting label="30028" type="bool" id="EnableTraktPoster" default="false" />
 		<setting label="30029" type="bool" id="EnableFanartTvPoster" default="false" />
