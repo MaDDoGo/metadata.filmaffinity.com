@@ -1,3 +1,7 @@
+[B]1.8.1[/B]
+
+- Revisada la búsqueda de posters en IMDB
+
 [B]1.8.0[/B]
 
 - Eliminada la búsqueda de posters en FA

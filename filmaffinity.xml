@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<scraper framework="1.1" date="2017-11-27">
+<scraper framework="1.1" date="2017-12-10">
 
 	<!--obtención de la url desde el fichero .nfo -->
 	<NfoUrl dest="3">
@@ -301,7 +301,7 @@
 				<expression noclean="1" />
 			</RegExp>
 			<!-- obtención de los posters de IMDB -->
-			<RegExp conditional="EnableIMDBPosters" input="$$6" output="&lt;url cache=&quot;imdb-tt$$6.json&quot; function=&quot;GetIMDBPoster&quot;&gt;http://www.theimdbapi.org/api/movie?movie_id=tt\1&lt;/chain&gt;" dest="5+">
+			<RegExp conditional="EnableIMDBPosters" input="$$6" output="&lt;url cache=&quot;imdb-tt$$6.json&quot; function=&quot;GetIMDBPoster&quot;&gt;http://www.theimdbapi.org/api/movie?movie_id=tt\1&lt;/url&gt;" dest="5+">
 				<expression noclean="1" />
 			</RegExp>
 <!-- comentado por si algún día se soluciona
