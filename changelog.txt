@@ -1,3 +1,8 @@
+[B]1.9.0[/B]
+
+- Revisión general del scraper
+- Uso de TMDB como pasarela de información extra
+
 [B]1.8.1[/B]
 
 - Revisada la búsqueda de posters en IMDB
