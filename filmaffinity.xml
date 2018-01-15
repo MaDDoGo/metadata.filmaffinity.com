@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<scraper framework="1.1" date="2018-01-01">
+<scraper framework="1.1" date="2018-01-15">
 
 	<!--obtención de la url desde el fichero .nfo -->
 	<NfoUrl dest="3">
@@ -186,17 +186,18 @@
 			
 			<!-- obtención del IMDBid (ha de ir antes de cualquier función que limpie los buffers) -->
 			<RegExp input="$$9" output="&lt;url function=&quot;GetIMDBid&quot;&gt;\1&lt;/url&gt;" dest="5+">
-				<!-- descomponemos en palabras el título original y las unimos con "+" -->
+				<!-- descomponemos en palabras el título y las unimos con "+" -->
+				<!-- título en español en $$11, título original en $$12 -->
 				<RegExp input="$$12" output="\1+" dest="9">
 					<!-- caracteres latinos UTF-8, números y aperturas de paréntesis -->
 					<!-- fuente: http://www.w3schools.com/charsets/ref_html_utf8.asp -->
 					<expression repeat="yes">([\(a-zA-Z0-9&#192;-&#591;]+)</expression>
 				</RegExp>
 				<!-- búsqueda en TMDB -->
+				<!-- <RegExp conditional="!GoogleAdvSearch" input="$$9" output="https://api.themoviedb.org/3/search/movie?api_key=ecbc86c92da237cb9faff6d3ddc4be6d&amp;query=\1" dest="9"> -->
 				<!-- <RegExp conditional="!GoogleAdvSearch" input="$$9" output="https://api.themoviedb.org/3/search/movie?api_key=ecbc86c92da237cb9faff6d3ddc4be6d&amp;query=\1&amp;primary_release_year=$$13" dest="9"> -->
-				<!-- <RegExp conditional="!GoogleAdvSearch" input="$$9" output="https://api.themoviedb.org/3/search/movie?api_key=ecbc86c92da237cb9faff6d3ddc4be6d&amp;query=\1&amp;year=$$13" dest="9"> -->
-				<RegExp conditional="!GoogleAdvSearch" input="$$9" output="https://api.themoviedb.org/3/search/movie?api_key=ecbc86c92da237cb9faff6d3ddc4be6d&amp;query=\1" dest="9">
-					<!-- nos quedamos con el título original sólo hasta encontrar (o no) una apertura de paréntesis -->
+				<RegExp conditional="!GoogleAdvSearch" input="$$9" output="https://api.themoviedb.org/3/search/movie?api_key=ecbc86c92da237cb9faff6d3ddc4be6d&amp;query=\1&amp;year=$$13" dest="9">
+					<!-- nos quedamos con el título sólo hasta encontrar (o no) una apertura de paréntesis -->
 					<RegExp input="$$9" output="\1" dest="9">
 						<expression>([^\(]+)</expression>
 					</RegExp>
@@ -238,7 +239,7 @@
 	</GetDetails>
 
 	<!-- obtención del id de IMDB -->
-	<GetIMDBid dest="3">
+	<GetIMDBid dest="3" clearbuffers="no">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
 
 			<!-- reseteamos la variable que almacenará el id de IMDB -->
@@ -286,8 +287,29 @@
 			</RegExp>
 			
 			<!-- obtención del id de IMDB a través de TMDB -->
-			<RegExp input="$$7" output="&lt;url cache=&quot;tmdb-$INFO[language]-\1.json&quot; function=&quot;GetTMDBIMDBid&quot;&gt;https://api.themoviedb.org/3/movie/\1?api_key=ecbc86c92da237cb9faff6d3ddc4be6d&lt;/url&gt;" dest="5+">
+			<RegExp input="$$7" output="<url cache=&quot;tmdb-$INFO[language]-\1.json&quot; function=&quot;GetTMDBIMDBid&quot;>https://api.themoviedb.org/3/movie/\1?api_key=ecbc86c92da237cb9faff6d3ddc4be6d</url>" dest="5+">
 				<expression>([0-9]+)</expression>
+			</RegExp>
+			
+			<!-- buscamos de nuevo en TMDB, pero esta vez sin año y con título original -->
+			<!-- saboteamos la función de búsqueda si existe TMDBid añadiéndolo antes de la url -->
+			<RegExp conditional="!GoogleAdvSearch" input="$$9" output="&lt;url function=&quot;GetIMDBid&quot;&gt;$$7\1&lt;/url&gt;" dest="5+">
+				<!-- descomponemos en palabras el título y las unimos con "+" -->
+				<!-- título en español en $$11, título original en $$12 -->
+				<RegExp input="$$11" output="\1+" dest="9">
+					<!-- caracteres latinos UTF-8, números y aperturas de paréntesis -->
+					<!-- fuente: http://www.w3schools.com/charsets/ref_html_utf8.asp -->
+					<expression repeat="yes">([\(a-zA-Z0-9&#192;-&#591;]+)</expression>
+				</RegExp>
+				<!-- búsqueda en TMDB -->
+				<RegExp input="$$9" output="https://api.themoviedb.org/3/search/movie?api_key=ecbc86c92da237cb9faff6d3ddc4be6d&amp;query=\1" dest="9">
+					<!-- nos quedamos con el título sólo hasta encontrar (o no) una apertura de paréntesis -->
+					<RegExp input="$$9" output="\1" dest="9">
+						<expression>([^\(]+)</expression>
+					</RegExp>
+					<expression noclean="1" />
+				</RegExp>
+				<expression noclean="1" />
 			</RegExp>
 			
 			<expression noclean="1" />
