@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<scraper framework="1.1" date="2018-03-01">
+<scraper framework="1.1" date="2018-03-10">
 
 	<!--obtención de la url desde el fichero .nfo -->
 	<NfoUrl dest="3">
@@ -431,7 +431,7 @@
 				<expression />
 			</RegExp>
 			<!-- obtención de título de colección de TMDB-->
-			<RegExp conditional="EnableTMDBSet" input="$$6" output="&lt;chain function=&quot;GetTMDBLangSetByIdChain&quot;&gt;$$6::$INFO[tmdblanguage]&lt;/chain&gt;" dest="5+">
+			<RegExp conditional="EnableTMDBSet" input="$$6" output="&lt;chain function=&quot;GetTMDBSetByIdChain&quot;&gt;$$6::$INFO[tmdblanguage]&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
 			<!-- obtención del eslogan de TMDB-->
