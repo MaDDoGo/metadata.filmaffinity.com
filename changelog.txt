@@ -1,3 +1,7 @@
+[B]1.9.6[/B]
+
+- Corregida y mejorada la búsqueda de información adicional en TMDB
+
 [B]1.9.5[/B]
 
 - Revisada la búsqueda de información adicional en TMDB
