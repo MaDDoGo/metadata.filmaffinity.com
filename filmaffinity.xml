@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<scraper framework="1.1" date="2020-10-25">
+<scraper framework="1.1" date="2020-10-26">
 
 	<!--obtención de la url desde el fichero .nfo -->
 	<NfoUrl dest="3">
@@ -89,9 +89,12 @@
 			</RegExp>
 			
 			<!-- título original -->
-			<!-- eliminar "(Disneys's )?" y usar \1 cuando filmaffinity deje de añadirlo) -->
-			<RegExp input="$$1" output="\2" dest="12">
-				<expression trim="1">T[ií]tulo original[^&lt;]*&lt;/dt&gt;(Disney's )?(.+?)(\(AKA|aka +&lt;|&lt;/dd&gt;)</expression>
+			<RegExp input="$$1" output="\1" dest="12">
+				<expression trim="1">T[ií]tulo original[^&lt;]*&lt;/dt&gt;(.+?)(\(AKA|aka +&lt;|&lt;/dd&gt;)</expression>
+			</RegExp>
+			<!-- eliminar "(Disneys's )?" mientras filmaffinity lo añada -->
+			<RegExp input="$$12" output="\1" dest="12">
+				<expression>^Disney's (.+)</expression>
 			</RegExp>
 			<RegExp input="$$12" conditional="EnableOriginalTitles" output="&lt;title&gt;\1&lt;/title&gt;" dest="5">
 				<expression noclean="1" />
@@ -152,6 +155,9 @@
 				<RegExp input="$$1" output="\1" dest="9">
 					<expression trim="1">Pa[ií]s[^&lt;]*&lt;/dt&gt;(.+?)&lt;/dd&gt;</expression>
 				</RegExp>
+				<RegExp input="$$9" output="\1" dest="9">
+					<expression>&nbsp;(.+)</expression>
+				</RegExp>
 				<expression repeat="yes" trim="1">([A-Z][^0-9/]+)</expression>
 			</RegExp>
 			
@@ -201,28 +207,22 @@
 			<!-- obtención del IMDBid (ha de ir antes de cualquier función que limpie los buffers) -->
 			<RegExp input="$$9" output="&lt;url function=&quot;GetIMDBid&quot;&gt;\1&lt;/url&gt;" dest="5+">
 				<!-- buscamos el título original de $$12 con el año -->
-				<!-- lo hacemos 2 veces por si no hay resultados de 4+ -->
 				<RegExp input="$$12" output="\1+" dest="9">
 					<!-- caracteres latinos UTF-8, números y caracteres html especiales -->
 					<!-- fuente: http://www.w3schools.com/charsets/ref_html_utf8.asp -->
-					<!-- permitimos "(", ":" y "." para limpiarlos después -->
+					<!-- permitimos "(", ":" para limpiarlos después -->
 					<expression repeat="yes">([\(:a-zA-Z0-9&#192;-&#591;&;]+)</expression>
-				</RegExp>
-				<RegExp input="$$12" output="\1+" dest="9">
-					<!-- caracteres latinos UTF-8, números y caracteres html especiales -->
-					<!-- fuente: http://www.w3schools.com/charsets/ref_html_utf8.asp -->
-					<!-- 3+ caracteres, permitiendo "(" y ":" para limpiarlos después -->
-					<expression repeat="yes">([\(:a-zA-Z0-9&#192;-&#591;&;]{3,})</expression>
-				</RegExp>
-				<RegExp input="$$9" output="\1" dest="9">
-					<expression>(.+?)[\(:]</expression>
-				</RegExp>
-				<!-- búsqueda en TMDB -->
-				<RegExp conditional="!GoogleAdvSearch" input="$$9" output="https://api.themoviedb.org/3/search/movie?api_key=$$19&amp;language=$INFO[tmdblanguage]&amp;query=\1&amp;year=$$13" dest="9">
-					<expression noclean="1" />
 				</RegExp>
 				<!-- búsqueda en IMDB a través de google -->
 				<RegExp conditional="GoogleAdvSearch" input="$$9" output="https://www.google.com/search?q=site:imdb.com+\1($$13)" dest="9">
+					<expression noclean="1" />
+				</RegExp>
+				<!-- búsqueda en TMDB, descartando lo que haya después de "(" o ":" -->
+				<!-- debería poder hacerse en un único paso, pero no parece funcionar -->
+				<RegExp input="$$9" output="\1" dest="9">
+					<expression>(.+?)[\(:]</expression>
+				</RegExp>
+				<RegExp conditional="!GoogleAdvSearch" input="$$9" output="https://api.themoviedb.org/3/search/movie?api_key=$$19&amp;language=$INFO[tmdblanguage]&amp;query=\1&amp;year=$$13" dest="9">
 					<expression noclean="1" />
 				</RegExp>
 				<expression noclean="1" />
@@ -268,7 +268,7 @@
 			
 			<!-- obtención del id de IMDB si es a través de google -->
 			<RegExp input="$$1" output="\1" dest="6">
-				<expression>/title/(tt[0-9]+)</expression>
+				<expression>.+?/title/(tt[0-9]+)</expression>
 			</RegExp>
 
 			<!-- obtención del id de IMDB a través de nfourl (sobreescribe si $$15 contiene algo) -->
@@ -295,25 +295,47 @@
 			<RegExp input="$$1" output="\1" dest="7">
 				<expression>&quot;id&quot;:([0-9]+)</expression>
 			</RegExp>
+			<!-- coincidencia con título original o español -->
+			<RegExp input="$$1" output="\1" dest="7">
+				<expression>&quot;id&quot;:([0-9]+)[^}]+title&quot;:&quot;($$12|$$11)&quot;</expression>
+			</RegExp>
+			
 			<!-- coincidencia con año -->
-			<RegExp input="$$1" output="\1" dest="7">
-				<expression>&quot;id&quot;:([0-9]+)[^}]+&quot;release_date&quot;:&quot;$$13</expression>
+			<RegExp input="$$18$$1" output="\1" dest="7">
+				<expression>^noYear.+?&quot;id&quot;:([0-9]+)[^}]+&quot;release_date&quot;:&quot;$$13</expression>
 			</RegExp>
-			<!-- coincidencia con título español -->
-			<RegExp input="$$1" output="\1" dest="7">
-				<expression>&quot;id&quot;:([0-9]+)[^}]+&quot;title&quot;:&quot;$$11&quot;</expression>
+			<!-- coincidencia con título original o español y año-->
+			<RegExp input="$$18$$1" output="\1" dest="7">
+				<expression>^noYear.+?&quot;id&quot;:([0-9]+)[^}]+title&quot;:&quot;($$12|$$11)&quot;[^}]+&quot;release_date&quot;:&quot;$$13</expression>
 			</RegExp>
-			<!-- coincidencia con título original -->
-			<RegExp input="$$1" output="\1" dest="7">
-				<expression>&quot;id&quot;:([0-9]+)[^}]+&quot;original_title&quot;:&quot;$$12&quot;</expression>
+			<!-- coincidencia con año y título original o español -->
+			<RegExp input="$$18$$1" output="\1" dest="7">
+				<expression>^noYear.+?&quot;id&quot;:([0-9]+)[^}]+&quot;release_date&quot;:&quot;$$13[^}]+title&quot;:&quot;($$12|$$11)&quot;</expression>
 			</RegExp>
-			<!-- coincidencia con año y título español -->
-			<RegExp input="$$1" output="\1" dest="7">
-				<expression>&quot;id&quot;:([0-9]+)[^}]+&quot;title&quot;:&quot;$$11&quot;[^}]+&quot;release_date&quot;:&quot;$$13</expression>
+			
+			<!-- si no tenemos ni TMDBid ni IMDBid en $$6$$7 buscamos el IMDBid en IMDB a través de Google -->
+			<!-- sólo lo hacemos en caso de que no se haya buscado ya en Google previamente -->
+			<RegExp conditional="!GoogleAdvSearch" input="$$6$$7$$18" output="&lt;url function=&quot;GetIMDBid&quot;&gt;$$9&lt;/url&gt;" dest="5+">
+				<!-- buscamos título en español de $$11 sin año -->
+				<RegExp input="$$11" output="\1+" dest="9">
+					<!-- caracteres latinos UTF-8, números y aperturas de paréntesis -->
+					<!-- fuente: http://www.w3schools.com/charsets/ref_html_utf8.asp -->
+					<expression repeat="yes">([\(:a-zA-Z0-9&#192;-&#591;&;]+)</expression>
+				</RegExp>
+				<RegExp input="$$9" output="\1" dest="9">
+					<expression>(.+?)[\(:]</expression>
+				</RegExp>
+				<!-- la búsqueda multi obtiene ids que no se corresponden sólo a películas -->
+				<!-- <RegExp input="$$9" output="https://api.themoviedb.org/3/search/multi?api_key=$$19&amp;query=\1" dest="9"> -->
+				<RegExp input="$$9" output="https://api.themoviedb.org/3/search/movie?api_key=$$19&amp;query=\1" dest="9">
+					<expression noclean="1" />
+				</RegExp>
+				<expression>^0$</expression>
 			</RegExp>
-			<!-- coincidencia con año y título original -->
-			<RegExp input="$$1" output="\1" dest="7">
-				<expression>&quot;id&quot;:([0-9]+)[^}]+&quot;original_title&quot;:&quot;$$12&quot;[^}]+&quot;release_date&quot;:&quot;$$13</expression>
+			
+			<!-- usamos $$18 para marcar que ya hemos pasado por aquí -->
+			<RegExp input="" output="noYear" dest="18">
+				<expression noclean="1" />
 			</RegExp>
 			
 			<!-- obtención del id de TMDB a través de nfourl (sobreescribe si $$17 contiene algo) -->
