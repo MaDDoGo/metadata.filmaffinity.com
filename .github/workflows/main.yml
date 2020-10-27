@@ -35,4 +35,4 @@ jobs:
         run: |
           pip install wheel
           pip install kodi-addon-checker
-          kodi-addon-checker --PR --branch matrix
+          kodi-addon-checker --PR --branch gotham
