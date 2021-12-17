@@ -1,0 +1,214 @@
+# Kodi Media Center language file
+# Addon Name: FilmAffinity
+# Addon id: metadata.filmaffinity.com
+# Addon Provider: hectorZiN,agjacome,xbmcero,pancheto,MaDDoGo
+msgid ""
+msgstr ""
+"Project-Id-Version: Kodi Addons\n"
+"Report-Msgid-Bugs-To: https://forum.kodi.tv/\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kodi Translation Team\n"
+"Language-Team: Team-Kodi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_GB\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#30000"
+msgid "General"
+msgstr ""
+
+msgctxt "#30001"
+msgid "General Options"
+msgstr ""
+
+msgctxt "#30002"
+msgid "Show titles in their original language"
+msgstr ""
+
+msgctxt "#30003"
+msgid "Compatibility with Studio logos"
+msgstr ""
+
+msgctxt "#30004"
+msgid "Advanced Search"
+msgstr ""
+
+msgctxt "#30005"
+msgid "Use Google search (read the documentation)"
+msgstr ""
+
+msgctxt "#30006"
+msgid "Documentation"
+msgstr ""
+
+msgctxt "#30007"
+msgid "About Google advanced search"
+msgstr ""
+
+msgctxt "#30008"
+msgid "Show changelog"
+msgstr ""
+
+msgctxt "#30009"
+msgid "Usar versión móvil de FilmAffinity"
+msgstr ""
+
+msgctxt "#30020"
+msgid "Media"
+msgstr ""
+
+msgctxt "#30021"
+msgid "Posters Sources"
+msgstr ""
+
+msgctxt "#30022"
+msgid "Filmaffinity main poster (quick download)"
+msgstr ""
+
+msgctxt "#30023"
+msgid "TMDB posters"
+msgstr ""
+
+msgctxt "#30024"
+msgid " -> TMDB posters language"
+msgstr ""
+
+msgctxt "#30025"
+msgid "MoviePosterDB posters"
+msgstr ""
+
+msgctxt "#30026"
+msgid "IMDB posters"
+msgstr ""
+
+msgctxt "#30027"
+msgid "IMPAwards posters"
+msgstr ""
+
+msgctxt "#30028"
+msgid "Fanart.tv posters"
+msgstr ""
+
+msgctxt "#30029"
+msgid "FilmAffinity extra posters"
+msgstr ""
+
+msgctxt "#30040"
+msgid "FanArts"
+msgstr ""
+
+msgctxt "#30041"
+msgid "FanArts Sources"
+msgstr ""
+
+msgctxt "#30042"
+msgid "TMDB FanArts"
+msgstr ""
+
+msgctxt "#30043"
+msgid "Trackt FanArts"
+msgstr ""
+
+msgctxt "#30044"
+msgid "FanArts de Fanart.tv"
+msgstr ""
+
+msgctxt "#30060"
+msgid "Trailers"
+msgstr ""
+
+msgctxt "#30061"
+msgid "Trailers Sources"
+msgstr ""
+
+msgctxt "#30062"
+msgid "FilmAffinity Trailer"
+msgstr ""
+
+msgctxt "#30063"
+msgid "TMDB Trailers"
+msgstr ""
+
+msgctxt "#30064"
+msgid " -> TMDB trailer language"
+msgstr ""
+
+msgctxt "#30065"
+msgid "Trailer HD-Trailers"
+msgstr ""
+
+msgctxt "#30066"
+msgid " -> HD-Trailers quality"
+msgstr ""
+
+msgctxt "#30080"
+msgid "TMDB"
+msgstr ""
+
+msgctxt "#30081"
+msgid "Servicios de TMDB"
+msgstr ""
+
+msgctxt "#30082"
+msgid "Get set (collection) titles from TMDB"
+msgstr ""
+
+msgctxt "#30083"
+msgid " - Set language from TMDB"
+msgstr ""
+
+msgctxt "#30084"
+msgid "Get slogan from TMDB"
+msgstr ""
+
+msgctxt "#30085"
+msgid " - Slogan language from TMDB"
+msgstr ""
+
+msgctxt "#30086"
+msgid "Use TMDB age ratings (MPAA)"
+msgstr ""
+
+msgctxt "#30087"
+msgid "TMDB ratings' country"
+msgstr ""
+
+msgctxt "#30088"
+msgid "Use TMDB full cast (actor, rol, picture)"
+msgstr ""
+
+msgctxt "#30089"
+msgid "Language for all TMDB services"
+msgstr ""
+
+msgctxt "#30100"
+msgid "IMDB"
+msgstr ""
+
+msgctxt "#30101"
+msgid "IMDB Services"
+msgstr ""
+
+msgctxt "#30102"
+msgid "Use IMDB full cast (actor, rol, picture)"
+msgstr ""
+
+msgctxt "#30104"
+msgid "Get IMDB Top250"
+msgstr ""
+
+msgctxt "#30105"
+msgid "Use IMDB age ratings (MPAA US)"
+msgstr ""
+
+msgctxt "#30106"
+msgid "Use IMDB ratings "
+msgstr ""
+
+msgctxt "#30107"
+msgid "Use IMDB US slogan"
+msgstr ""
+
